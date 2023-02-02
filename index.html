@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./app.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+
+  <body>
+    <section class="app darkTheme">
+      <div class="head">
+        <span class="heading">todo</span>
+        <img class="themeSwitch" src="./images/icon-sun.svg" />
+      </div>
+      <div class="inputAndCircle">
+        <input class="todoInput" placeholder="Create a new Todo..." />
+        <div class="inputCircle"></div>
+      </div>
+
+      <div class="todos">
+        <div class="todo" draggable="true" cursor="move">
+          <div class="checkContainer taskCircle"></div>
+          <span class="todoText"></span>
+          <img class="crossBtn" src="./images/icon-cross.svg" />
+        </div>
+
+        <div class="leftAndClear" draggable="false">
+          <span class="left"><span class="leftNum">0</span> items left</span>
+          <button class="clearBtn">Clear Completed</button>
+        </div>
+      </div>
+      <div class="viewOps">
+        <button class="viewAllBtn viewOpSelected">All</button>
+        <button class="viewActiveBtn">Active</button>
+        <button class="viewCompletedBtn">Completed</button>
+      </div>
+    </section>
+
+    <div class="dragInfo">Drag and drop to reorder list</div>
+  </body>
+  <script src="./app.js"></script>
+  <script src="./theme.js"></script>
+</html>

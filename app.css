@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Josefin Sans";
+  font-size: 0.8em;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #161722;
+  background-image: url("./images/bg-mobile-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  padding: 3rem;
+  width: 100%;
+  max-width: 35rem;
+  
+}
+
+.head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.heading {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 10px;
+  color: white;
+}
+
+.todoInput {
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  padding: 1.5rem;
+  padding-left: 3.5rem;
+  font-family: inherit;
+  outline: none;
+  margin: 1rem 0;
+}
+
+.darkTheme .todoInput {
+  background-color: hsl(235, 24%, 19%);
+  color: #cacde8;
+  box-shadow: rgb(0, 0, 5, 0.3) 0px 0px 15px 0px;
+
+}
+
+.lightTheme .todoInput {
+  background-color: #ffffff;
+  color: #70707a;
+  box-shadow: rgb(100 100 111 / 20%) 0px 0px 29px 0px;
+
+}
+
+.lightTheme .todoInput::placeholder {
+  color: #b2b1b7;
+}
+
+.darkTheme .todoInput::placeholder {
+  color: #777a92;
+}
+
+.inputAndCircle {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.taskCircle,
+.inputCircle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.darkTheme .taskCircle,
+.darkTheme .inputCircle {
+  border: 1px solid hsl(234, 11%, 52%);
+}
+
+.lightTheme .taskCircle,
+.lightTheme .inputCircle {
+  border: 1px solid #d0cfd3;
+}
+
+.taskCircle {
+  cursor: pointer;
+}
+
+.checked {
+  background: url("./images/icon-check.svg") no-repeat center center,
+    linear-gradient(to left top, hsl(280, 87%, 65%), hsl(192, 100%, 67%));
+}
+
+.darkTheme .checked + .todoText {
+  text-decoration: line-through;
+  color: #777a92;
+}
+
+.lightTheme .checked + .todoText {
+  text-decoration: line-through;
+  color: #b2b1b7;
+}
+
+.inputCircle {
+  position: absolute;
+  left: 1rem;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: 1rem 0rem;
+}
+
+.lightTheme .todos,
+.lightTheme .viewOps {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.darkTheme .todos,
+.darkTheme .viewOps {
+  background-color: hsl(235, 24%, 19%);
+  box-shadow: rgb(0, 0, 5, 0.3) 0px 0px 15px 0px;
+
+}
+
+.lightTheme .todos,
+.lightTheme .viewOps {
+  background-color: #ffffff;
+}
+
+.todo {
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  cursor: move;
+}
+
+.darkTheme .todo {
+  color: hsl(234, 39%, 85%);
+}
+
+.lightTheme .todo {
+  color: #70707a;
+}
+
+.todo:first-of-type {
+  display: none;
+}
+
+.crossBtn {
+  margin-left: auto;
+  width: 1rem;
+}
+
+.darkTheme .todos .todo {
+  border-bottom: 1px solid hsl(233, 14%, 35%);
+}
+
+.lightTheme .todos .todo {
+  border-bottom: 1px solid #eeedf0;
+}
+
+.checkContainer {
+  margin-right: 1rem;
+}
+
+.leftAndClear {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: (234, 39%, 85%);
+  padding: 1.5rem;
+  color: hsl(234, 11%, 52%);
+  font-size: 0.9rem;
+}
+
+.clearBtn {
+  font-size: 0.9rem;
+}
+
+.viewOps {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.viewOps button {
+  margin: 0 0.5rem;
+  font-weight: 700;
+}
+
+.dragInfo {
+  text-align: center;
+}
+
+.darkTheme + .dragInfo {
+  color: hsl(233, 14%, 35%);
+}
+
+.lightTheme + .dragInfo {
+  color: #b2b1b7;
+}
+
+.clearBtn,
+.viewAllBtn,
+.viewActiveBtn,
+.viewCompletedBtn {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+}
+
+.darkTheme .clearBtn,
+.darkTheme .viewAllBtn,
+.darkTheme .viewActiveBtn,
+.darkTheme .viewCompletedBtn,
+.darkTheme .left {
+  color: #777a92;
+}
+
+.lightTheme .clearBtn,
+.lightTheme .viewAllBtn,
+.lightTheme .viewActiveBtn,
+.lightTheme .viewCompletedBtn,
+.left {
+  color: #b2b1b7;
+}
+
+.clearBtn:hover,
+.viewAllBtn:hover,
+.viewActiveBtn:hover,
+.viewCompletedBtn:hover {
+  color: hsl(220, 98%, 61%);
+}
+
+.viewOpSelected {
+  color: hsl(220, 98%, 61%) !important;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.dragging {
+  transform: scale(1.05);
+  border-radius: 5px;
+  cursor: move;
+}
+
+.darkTheme .dragging { 
+  border: 1px solid hsl(233, 14%, 35%);
+  box-shadow: rgb(0, 0, 5, 0.3) 0px 0px 15px 0px;
+  background-color: hsl(235, 24%, 19%);
+}
+
+.lightTheme .dragging { 
+  background-color: #ffffff;
+  border: 1px solid #eeedf0;
+  box-shadow: rgb(100 100 111 / 20%) 0px 0px 29px 0px;
+
+}
+
+@media (min-width: 40rem){
+body {
+  background-image: url("./images/bg-desktop-dark.jpg");
+}
+}
+
